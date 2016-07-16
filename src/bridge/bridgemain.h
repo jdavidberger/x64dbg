@@ -754,9 +754,24 @@ typedef struct
     XREF_RECORD* references;
 } XREF_INFO;
 
+#ifdef __cplusplus
+
+struct AnalysisInfo
+{
+    AnalysisInfo* derivesFrom;
+    duint inststart;
+    duint instend;
+    virtual ~AnalysisInfo() {}
+    virtual const char* Description() const { return ""; }
+};
+#else
+typedef struct AnalysisInfo AnalysisInfo;
+#endif
+
 //Debugger functions
 BRIDGE_IMPEXP const char* DbgInit();
 BRIDGE_IMPEXP void DbgExit();
+BRIDGE_IMPEXP void DbgAddAnalysisInfo(AnalysisInfo*);
 BRIDGE_IMPEXP bool DbgMemRead(duint va, unsigned char* dest, duint size);
 BRIDGE_IMPEXP bool DbgMemWrite(duint va, const unsigned char* src, duint size);
 BRIDGE_IMPEXP duint DbgMemGetPageSize(duint base);

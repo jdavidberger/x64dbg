@@ -176,6 +176,10 @@ typedef struct
     int loadSaveType;
 } PLUG_CB_LOADSAVEDB;
 
+typedef struct
+{
+    AnalysisInfo* info;
+} PLUG_CB_NEWANALYSISINFO;
 //enums
 typedef enum
 {
@@ -201,7 +205,8 @@ typedef enum
     CB_WINEVENT, //PLUG_CB_WINEVENT
     CB_WINEVENTGLOBAL, //PLUG_CB_WINEVENTGLOBAL
     CB_LOADDB, //PLUG_CB_LOADSAVEDB
-    CB_SAVEDB //PLUG_CB_LOADSAVEDB
+    CB_SAVEDB, //PLUG_CB_LOADSAVEDB
+    CB_NEWANALYSISINFO //PLUG_CB_NEWANALYSISINFO
 } CBTYPE;
 
 //typedefs

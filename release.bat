@@ -85,12 +85,14 @@ xcopy src\dbg\TitanEngine %RELEASEDIR%\pluginsdk\TitanEngine /S /Y
 del %RELEASEDIR%\pluginsdk\TitanEngine\TitanEngine.txt /F /Q
 xcopy src\dbg\XEDParse %RELEASEDIR%\pluginsdk\XEDParse /S /Y
 xcopy src\dbg\yara %RELEASEDIR%\pluginsdk\yara /S /Y
+copy src\dbg\_analysis.h %RELEASEDIR%\pluginsdk\_analysis.h
 copy src\dbg\_plugin_types.h %RELEASEDIR%\pluginsdk\_plugin_types.h
 copy src\dbg\_plugins.h %RELEASEDIR%\pluginsdk\_plugins.h
 copy src\dbg\_scriptapi*.h %RELEASEDIR%\pluginsdk\_scriptapi*.h
 copy src\dbg\_dbgfunctions.h %RELEASEDIR%\pluginsdk\_dbgfunctions.h
 copy src\bridge\bridgelist.h %RELEASEDIR%\pluginsdk\bridgelist.h
 copy src\bridge\bridgemain.h %RELEASEDIR%\pluginsdk\bridgemain.h
+copy src\bridge\bridgegraph.h %RELEASEDIR%\pluginsdk\bridgegraph.h
 
 genlib bin\x32\x32bridge.dll
 copy x32bridge.a %RELEASEDIR%\pluginsdk\libx32bridge.a
